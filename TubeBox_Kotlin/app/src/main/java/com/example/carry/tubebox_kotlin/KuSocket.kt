@@ -42,4 +42,7 @@ class KuSocket {
         }
         mWebSocketClient.connect()
     }
+    fun sendMessage(s: String){
+        mWebSocketClient.send(s)
+    }
 }

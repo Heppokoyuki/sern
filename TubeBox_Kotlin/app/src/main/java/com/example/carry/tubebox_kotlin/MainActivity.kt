@@ -5,14 +5,14 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    val callKuSocket = KuSocket()
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         button.setOnClickListener { sendAndConnect()}
+        button2.setOnClickListener {callKuSocket.sendMessage(editText3.text.toString())}
     }
     fun sendAndConnect(){
-        val callKuSocket = KuSocket()
         val ip = editText.text.toString()
         val po = editText2.text.toString()
         callKuSocket.connectWebSocket(ip, po)
@@ -21,6 +21,6 @@ class MainActivity : AppCompatActivity() {
         textView.text = message
     }
     fun connectionOpened(){
-        textView2.text = "Connected!"
+        textView.text = "Connection Opened"
     }
 }

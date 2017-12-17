@@ -50,17 +50,27 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:textAlignment="center"
-            android:textSize="24sp" />
+            android:text="Received Messages"
+            android:textAlignment="center" />
 
-        <TextView
-            android:id="@+id/textView2"
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteX="85dp"
+            tools:layout_editor_absoluteY="77dp" />
+
+        <Button
+            android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:textAlignment="center"
-            android:textSize="24sp" />
+            android:text="send this"
+            tools:layout_editor_absoluteX="147dp"
+            tools:layout_editor_absoluteY="230dp" />
 
     </LinearLayout>
 
