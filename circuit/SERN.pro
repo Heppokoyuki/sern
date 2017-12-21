@@ -1,4 +1,4 @@
-update=2017年12月04日 14時03分38秒
+update=2017年12月22日 06時25分29秒
 version=1
 last_client=kicad
 [pcbnew]
@@ -71,6 +71,10 @@ LibName39=/home/yuki/workspace/library_sern/kicad-gigalib/library/pcm1794
 LibName40=/home/yuki/workspace/library_sern/kicad-gigalib/library/ada-250
 LibName41=/home/yuki/workspace/library_sern/kicad-gigalib/library/ta48m033f
 LibName42=/home/yuki/workspace/library_sern/kicad-gigalib/library/ta48m05f
+LibName43=lib/ESP32-kiCAD-Footprints-master/ESP32-Footprints/ESP32-footprints-Shem-Lib
+LibName44=lib/ESP32-kiCAD-Footprints-master/ESP32-Footprints/espressif-xess
+LibName45=SERN-cache
+LibName46=lib/ics570
 [schematic_editor]
 version=1
 PageLayoutDescrFile=
