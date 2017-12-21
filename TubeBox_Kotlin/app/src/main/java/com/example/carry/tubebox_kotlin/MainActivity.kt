@@ -10,6 +10,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         button.setOnClickListener { sendAndConnect()}
+        button.setOnClickListener { sendAndConnect()}
     }
     fun sendAndConnect(){
         val callKuSocket = KuSocket()
