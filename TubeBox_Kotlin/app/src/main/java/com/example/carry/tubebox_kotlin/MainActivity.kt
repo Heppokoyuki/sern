@@ -9,10 +9,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        button.setOnClickListener { sendAndConnect()}
+        button.setOnClickListener {Connect()}
         button2.setOnClickListener {callKuSocket.sendMessage(editText3.text.toString())}
     }
-    fun sendAndConnect(){
+    fun Connect(){
         val ip = editText.text.toString()
         val po = editText2.text.toString()
         callKuSocket.connectWebSocket(ip, po)
