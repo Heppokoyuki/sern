@@ -8,6 +8,7 @@ import java.net.URISyntaxException
 
 class KuSocket {
     lateinit var mWebSocketClient: WebSocketClient
+    var isConnected : Boolean = false
     fun connectWebSocket(ip :String, po :String) {
         val uri: URI
         val ipAddress: String
@@ -26,6 +27,7 @@ class KuSocket {
                 Log.i("Websocket", "Opened")
                 mWebSocketClient.send("HelloWSWorld!")
                 callMain.connectionOpened()
+                isConnected = true
             }
 
             override fun onMessage(s: String) {
@@ -43,6 +45,12 @@ class KuSocket {
         mWebSocketClient.connect()
     }
     fun sendMessage(s: String){
-        mWebSocketClient.send(s)
+        val callMain = MainActivity()
+        if (isConnected){
+            mWebSocketClient.send(s)
+        }
+        else{
+            callMain.sendTextToBox("Not yet connected!")
+        }
     }
 }

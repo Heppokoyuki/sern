@@ -10,7 +10,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         button.setOnClickListener {Connect()}
-        button2.setOnClickListener {callKuSocket.sendMessage(editText3.text.toString())}
+        button2.setOnClickListener {callKuSocket.sendMessage(getString(R.string.v_Up))}
+        button3.setOnClickListener {callKuSocket.sendMessage(getString(R.string.v_Down))}
     }
     fun Connect(){
         val ip = editText.text.toString()

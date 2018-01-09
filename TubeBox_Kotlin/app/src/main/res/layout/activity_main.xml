@@ -50,27 +50,33 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Received Messages"
             android:textAlignment="center" />
 
-        <EditText
-            android:id="@+id/editText3"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            tools:layout_editor_absoluteX="85dp"
-            tools:layout_editor_absoluteY="77dp" />
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="send this"
-            tools:layout_editor_absoluteX="147dp"
-            tools:layout_editor_absoluteY="230dp" />
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:text="UP"
+                android:textAlignment="center"
+                tools:layout_editor_absoluteX="147dp"
+                tools:layout_editor_absoluteY="230dp" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:text="DOWN"
+                android:textAlignment="center" />
+        </LinearLayout>
 
     </LinearLayout>
 
