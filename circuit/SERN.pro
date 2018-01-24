@@ -1,4 +1,4 @@
-update=2017年12月23日 14時53分01秒
+update=2018年01月17日 00時03分48秒
 version=1
 last_client=kicad
 [pcbnew]
@@ -25,16 +25,6 @@ version=1
 NetIExt=net
 [general]
 version=1
-[schematic_editor]
-version=1
-PageLayoutDescrFile=
-PlotDirectoryName=
-SubpartIdSeparator=0
-SubpartFirstId=65
-NetFmtName=
-SpiceForceRefPrefix=0
-SpiceUseNetNumbers=0
-LabSize=60
 [eeschema]
 version=1
 LibDir=
@@ -86,3 +76,13 @@ LibName44=lib/ESP32-kiCAD-Footprints-master/ESP32-Footprints/espressif-xess
 LibName45=SERN-cache
 LibName46=lib/ics570
 LibName47=lib/mcw03
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
