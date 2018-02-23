@@ -5,6 +5,7 @@ import android.bluetooth.BluetoothDevice
 import android.bluetooth.BluetoothSocket
 import android.util.Log
 import java.util.*
+import kotlin.text.Charsets.UTF_8
 
 
 /**
@@ -24,21 +25,20 @@ class btSocket {
             while(i < deviceArray.size){
                         var deviceName = deviceArray[i].name
                         Log.i("foundDevice", deviceName)
-//                        if (deviceName == searchName){
-//                            device = deviceArray[i]
-//                            connectBtDevice(device)
-//                            break
-//                }
+                        if (deviceName == searchName){
+                            device = deviceArray[i]
+                            connectBtDevice(device)
+                            break
+                }
                 i++
             }
         }
     }
+    fun connectBtDevice(device: BluetoothDevice){
+        val socket : BluetoothSocket = device.createRfcommSocketToServiceRecord(uuid)
+        socket.connect()
+        socket.outputStream.write("Connected".toByteArray(UTF_8))
 
-//    fun connectBtDevice(device: BluetoothDevice){
-//        val socket : BluetoothSocket = device.createRfcommSocketToServiceRecord(uuid)
-//        socket.connect()
-//        socket.outputStream.write("Connected".toByteArray(UTF_8))
-//
-//    }
+    }
 
 }

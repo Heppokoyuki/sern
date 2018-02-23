@@ -6,7 +6,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     val KuSocket = KuSocket()
-    val pingScan = pingScanner()
     val btScan = btSocket()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
