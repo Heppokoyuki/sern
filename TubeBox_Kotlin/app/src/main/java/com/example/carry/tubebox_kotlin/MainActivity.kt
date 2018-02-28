@@ -6,18 +6,16 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     val KuSocket = KuSocket()
-    val btScan = btSocket()
+    val ip : String = "192.168.1.119"
+    val po : String = "9999"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         button.setOnClickListener {Connect()}
         button2.setOnClickListener {KuSocket.mWebSocketClient.send("v_Up")}
         button3.setOnClickListener {KuSocket.mWebSocketClient.send("v_Down")}
-        btScan.searchBtDevice("Beoplay E8")
     }
     fun Connect(){
-        val ip = editText.text.toString()
-        val po = editText2.text.toString()
         KuSocket.connectWebSocket(ip, po)
     }
     fun sendTextToBox(message : String){
