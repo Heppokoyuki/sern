@@ -1,9 +1,19 @@
-$(function(){
-    $('#slider').slider();
-    $('#slider').change(function(e){
-
+$(function() {
+    const socket = new WebSocket('ws://localhost:8000');
+    socket.addEventListener('open', function(e) {
+        socket.send('Hello, Server');
     });
-    $("#rebootbtn").click(function(e){
-        console.log('hoge');
+    $('#slider').slider({
+        change: function(event, ui) {
+            alert('ui.value');
+        }
+    });
+    $("#rebootbtn").click(function(e) {
+        var res = confirm("再起動しますか?");
+        if (res == true) {
+            alert('再起動実行');
+        } else {
+            alert('再起動不実行');
+        }
     });
 });
