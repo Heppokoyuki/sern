@@ -1,5 +1,4 @@
 # SERN PROJECT REPOSITORY
-====
 
 ## Overview
 This repository is made for Hack U National Institute of Technology, Tokyo College 2018 and made by SERN Team 2018.
