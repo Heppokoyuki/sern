@@ -1,0 +1,54 @@
+.pagetitle {
+    width: 100%;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.pagetitle h1 {
+    margin: 5px;
+    font-size: 40px;
+}
+
+.volume {
+    text-align: center;
+    height: auto;
+    width: 100%;
+    margin: 20px;
+}
+
+.volume h2 {
+    font-size: 30px;
+}
+
+.slider-wrapper {
+    width: 400px;
+    margin: 50px auto;
+    display: block;
+}
+
+.reboot {
+    text-align: center;
+    height: auto;
+    width: 100%;
+    margin: 20px;
+}
+
+.reboot h2 {
+    font-size: 30px;
+}
+
+.reboot button {
+    margin: 20px;
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+
+.reboote button img {
+    display: block;
+}
+
+.reboot button:active,
+.reboot button img {
+    position: relative;
+}
