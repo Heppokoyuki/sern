@@ -1,27 +1,50 @@
 package com.example.carry.tubebox_kotlin
 
-import android.support.v7.app.AppCompatActivity
+import android.app.Activity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
+import com.example.carry.tubebox_kotlin.R.id.textView
+import com.marcinmoskala.arcseekbar.ArcSeekBar
+import com.marcinmoskala.arcseekbar.ProgressListener
 import kotlinx.android.synthetic.main.activity_main.*
+import java.net.InetAddress
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : Activity() {
+    val UDP = UDPClient()
+    val ip : String = "192.168.1.222"
+    val po : String = "9999"
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        button.setOnClickListener { sendAndConnect()}
-        button.setOnClickListener { sendAndConnect()}
+        button.setOnClickListener {callUDP()}
+        button4.setOnClickListener {KuSocket.mWebSocketClient.send("pi_Restart")}
+        volumeBar.onProgressChangedListener = ProgressListener {setVolume()}
+        textview2 = findViewById<TextView>(R.id.textView)
+        button_4 = findViewById<Button>(R.id.button4)
+        Bar = findViewById<ArcSeekBar>(R.id.volumeBar)
+        button_4?.isEnabled = false
+        Bar?.isEnabled = false
     }
-    fun sendAndConnect(){
-        val callKuSocket = KuSocket()
-        val ip = editText.text.toString()
-        val po = editText2.text.toString()
-        callKuSocket.connectWebSocket(ip, po)
+    companion object {
+        var textview2:TextView? = null
+        var button_4:Button? = null
+        var Bar:ArcSeekBar? = null
+        fun sendTextToBox(message : String){
+            textview2?.text = message
+        }
+        fun connected(){
+            button_4?.isEnabled = true
+            Bar?.isEnabled = true
+        }
+
     }
-    fun sendTextToBox(message : String){
-        textView.text = message
+    fun callUDP() {
+        UDP.findTube()
+        textview2?.text = "Connecting..."
     }
-    fun connectionOpened(){
-        textView2.text = "Connected!"
+    fun setVolume(){
+        var value : Int = volumeBar.progress
+        KuSocket.mWebSocketClient.send("v_Set-" + value.toString() + "%")
     }
 }
