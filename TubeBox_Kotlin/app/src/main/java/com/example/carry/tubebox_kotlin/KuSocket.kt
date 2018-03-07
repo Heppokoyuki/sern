@@ -5,35 +5,27 @@ import org.java_websocket.client.WebSocketClient
 import org.java_websocket.handshake.ServerHandshake
 import java.net.URI
 import java.net.URISyntaxException
-
-class KuSocket {
+object KuSocket {
     lateinit var mWebSocketClient: WebSocketClient
-    var isConnected : Boolean = false
-
     fun connectWebSocket(ip :String, po :String) {
         val uri: URI
-        val ipAddress: String
-        val port: String
-        val callMain = MainActivity()
         try {
-            ipAddress = ip
-            port = po
-            uri = URI("ws://$ipAddress:$port")
+            uri = URI("ws:/$ip:$po")
         } catch (e: URISyntaxException) {
             e.printStackTrace()
             return
         }
-
         mWebSocketClient = object : WebSocketClient(uri) {
             override fun onOpen(serverHandshake: ServerHandshake) {
                 Log.i("Websocket", "Opened")
                 mWebSocketClient.send("HelloWSWorld!")
-                callMain.connectionOpened()
-                isConnected = true
+                MainActivity.connected()
+                UDPClient().connect(true)
             }
 
             override fun onMessage(s: String) {
-                callMain.sendTextToBox(s)
+                MainActivity.sendTextToBox(s)
+                Log.i("message", s)
             }
 
             override fun onClose(i: Int, s: String, b: Boolean) {
@@ -44,8 +36,8 @@ class KuSocket {
                 Log.i("Websocket", "Error " + e.message)
             }
         }
-
         mWebSocketClient.connect()
     }
 
 }
+
