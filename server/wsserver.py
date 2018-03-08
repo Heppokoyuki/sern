@@ -3,7 +3,6 @@ import socket
 import subprocess
 
 
-ipval = [(s.connect(('8.8.8.8',80)),s.getsockname()[0],s.close()) for s in [socket.socket(socket.AF_INET,socket.SOCK_DGRAM)]][0][1]
 
 def new_client(client, server):
     server.send_message(client,"connected")
@@ -41,7 +40,7 @@ def received_process(client, server, message):
         subprocess.call(cmd.split())
 
 
-server = WebsocketServer(9999, host=ipval)
+server = WebsocketServer(9999, host='192.168.1.119')
 server.set_fn_new_client(new_client)#if client connected
 server.set_fn_message_received(received_process)#if message recieved from client
 server.run_forever()
