@@ -35,7 +35,10 @@ class MainActivity : Activity() {
             button_4?.isEnabled = true
             Bar?.isEnabled = true
         }
-
+        fun disconnected(){
+            button_4?.isEnabled = false
+            Bar?.isEnabled = false
+        }
     }
     fun callUDP() {
         UDP.toConnect()
@@ -43,7 +46,7 @@ class MainActivity : Activity() {
     }
     fun setVolume(){
         var value : Int = volumeBar.progress
-        KuSocket.mWebSocketClient.send("v_Set-" + value.toString() + "%")
+//        KuSocket.mWebSocketClient.send("v_Set-" + value.toString() + "%")
         Volumetext.text = value.toString()
     }
 }

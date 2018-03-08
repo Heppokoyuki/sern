@@ -30,6 +30,7 @@ object KuSocket {
 
             override fun onClose(i: Int, s: String, b: Boolean) {
                 Log.i("Websocket", "Closed " + s)
+                MainActivity.disconnected()
             }
 
             override fun onError(e: Exception) {

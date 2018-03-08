@@ -21,9 +21,10 @@
             android:id="@+id/Volumetext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:gravity="top|center_horizontal"
             android:text="80"
-            android:textSize="30sp" />
+            android:textSize="48sp" />
 
         <com.marcinmoskala.arcseekbar.ArcSeekBar
             android:id="@+id/volumeBar"
@@ -31,7 +32,6 @@
             android:layout_height="100dp"
             android:layout_weight="1"
             android:scaleY="1"
-            app:enabled="false"
             app:progress="80"
             app:progressBackgroundWidth="8dp"
             app:progressWidth="8dp"
