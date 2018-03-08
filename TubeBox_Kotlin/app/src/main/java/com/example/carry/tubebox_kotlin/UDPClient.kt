@@ -13,7 +13,7 @@ import java.util.logging.Handler
 class UDPClient{
     //val Kusocket = KuSocket()
     lateinit var clientSocket : DatagramSocket
-    lateinit var sendPacket : DatagramPacket
+    lateinit var sendPacket : DatagramPa
     lateinit var receivePacket: DatagramPacket
     var IsConnected : Boolean = false
     var ip : InetAddress = InetAddress.getByName("255.255.255.255")
