@@ -11,7 +11,6 @@ import java.util.logging.Handler
  * Created by carry on 3/3/2018.
  */
 class UDPClient{
-    //val Kusocket = KuSocket()
     lateinit var clientSocket : DatagramSocket
     lateinit var sendPacket : DatagramPacket
     lateinit var receivePacket: DatagramPacket
@@ -20,8 +19,8 @@ class UDPClient{
     var sendData : ByteArray =  "FindTubeBox".toByteArray()
     var receiveData : ByteArray = ByteArray(4096)
     var sendIp : String = ""
-    fun findTube(){
-//        while (sendIp == ""){
+
+    fun findTube() {
         Thread {
             clientSocket = DatagramSocket()
             sendPacket = DatagramPacket(sendData, sendData.size, ip, 9887)
@@ -37,12 +36,12 @@ class UDPClient{
             clientSocket.close()
             KuSocket.connectWebSocket(sendIp, "9999")
         }.start()
-//        }
-
     }
+
     fun connect(e : Boolean){
         IsConnected = e
     }
+
     fun toConnect(){
         Thread {
             var timeout: Int = 5
@@ -52,7 +51,7 @@ class UDPClient{
                 timeout--
             }
             if (IsConnected == false) {
-                MainActivity.sendTextToBox("Failed to connect")
+                MainActivity.sendTextToBox("Failed to connect, try again")
             }
         }.start()
     }
