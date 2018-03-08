@@ -12,8 +12,6 @@ import java.net.InetAddress
 
 class MainActivity : Activity() {
     val UDP = UDPClient()
-    val ip : String = "192.168.1.222"
-    val po : String = "9999"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -40,11 +38,12 @@ class MainActivity : Activity() {
 
     }
     fun callUDP() {
-        UDP.findTube()
+        UDP.toConnect()
         textview2?.text = "Connecting..."
     }
     fun setVolume(){
         var value : Int = volumeBar.progress
         KuSocket.mWebSocketClient.send("v_Set-" + value.toString() + "%")
+        Volumetext.text = value.toString()
     }
 }
